@@ -1,42 +1,24 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListAvionModel
 @{
 }
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">número de asientos</th>
-      <th scope="col">numero de baños</th>
-      <th scope="col">capacidad máxima en peso</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Jumbo</td>
-      <td>2021</td>
-      <td>400</td>
-      <td>4</td>
-      <td>4000</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>boing</td>
-      <td>2020</td>
-      <td>500</td>
-      <td>5</td>
-      <td>5000</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>jet</td>
-      <td>2019</td>
-      <td>100</td>
-      <td>1</td>
-      <td>2000</td>
-    </tr>
-  </tbody>
+<h1>Listado de Aviones</h1>
+<table class="table">
+@foreach (var avion in Model.Aviones)
+{
+<tr>
+<td>@avion.id</td>
+<td>@avion.marca</td>
+<td>@avion.modelo</td>
+<td>@avion.num_asientos</td>
+<td>@avion.num_baños</td>
+<td>@avion.cap_max_peso</td>
+<td>
+<a class="btn btn-info" asp-page="./Details"
+asp-route-avionId="@avion.id"><i class="fas fa-adjust"></i>Ver</a>
+<a class="btn btn-info" href="">Editar</a>
+<a class="btn btn-danger" href="">Eliminar</a>
+</td>
+</tr>
+}
 </table>
