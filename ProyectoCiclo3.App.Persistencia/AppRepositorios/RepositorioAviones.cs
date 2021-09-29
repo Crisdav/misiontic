@@ -23,5 +23,16 @@ return aviones;
 public Aviones GetAvionWithId(int id){
 return aviones.SingleOrDefault(b => b.id == id);
 }
+public Aviones Update(Aviones newAvion){
+            var avion= aviones.SingleOrDefault(b => b.id == newAvion.id);
+            if(avion != null){
+                avion.marca = newAvion.marca;
+                avion.modelo = newAvion.modelo;
+                avion.num_asientos = newAvion.num_asientos;
+                avion.num_baños = newAvion.num_baños;
+                avion.cap_max_peso = newAvion.cap_max_peso;
+            }
+        return avion;
+        }
 }
 }
