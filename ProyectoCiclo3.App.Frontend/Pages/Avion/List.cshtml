@@ -4,6 +4,16 @@
 }
 <h1>Listado de Aviones</h1>
 <table class="table">
+      <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Num_asientos </th>
+      <th scope="col">Num_baños</th>
+      <th scope="col">Cap_max_peso</th>
+    </tr>
+  </thead>
 @foreach (var avion in Model.Aviones)
 {
 <tr>
