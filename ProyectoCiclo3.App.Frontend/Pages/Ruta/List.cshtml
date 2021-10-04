@@ -1,34 +1,35 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListRutaModel
 @{
 }
-
-<table class="table table-hover">
-  <thead>
+<h1>Listado de Rutas</h1>
+<table class="table table-dark table-striped">
+      <thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Origen</th>
       <th scope="col">Destino</th>
-      <th scope="col">tiempo estimado</th>
+      <th scope="col">Tiempo_estimado </th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Bogota</td>
-      <td>Armenia</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Armenia</td>
-      <td>Bogota</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Bogota</td>
-      <td>Bucaramanga</td>
-      <td>4</td>
-    </tr>
-  </tbody>
+@foreach (var ruta in Model.Rutas)
+{
+<tr>
+<td>@ruta.id</td>
+<td>@ruta.origen</td>
+<td>@ruta.destino</td>
+<td>@ruta.tiempo_estimado</td>
+<td>
+<a class="btn btn-info" asp-page="./Details"
+asp-route-rutaId="@ruta.id"><i class="fas fa-adjust"></i>Ver</a>
+<a class="btn btn-info" asp-page="./Edit" asp-route-rutaId="@ruta.id"><i class="fas fa-adjust"></i>Editar</a>
+<form method="POST">
+<input type="number" class="form-control d-none" id="id"
+name="id" placeholder="id" asp-for="@ruta.id">
+<button type="submit"class="btn btn-danger"
+href="">Eliminar</button>
+</form>
+</td>
+</tr>
+}
 </table>

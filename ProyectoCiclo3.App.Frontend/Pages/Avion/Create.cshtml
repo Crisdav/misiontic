@@ -1,22 +1,22 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.FormAvionModel
 @{
+    var avion = Model.Avion;
 }
-
 <div class="text-center">
-<form action="">
-  <label for="id" class="form-label">Id:</label>
-  <input type="number" class="form-control" id="id" name="id" placeholder="Id">
-  <label for="marca" class="form-label">Marca:</label>
-  <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca">
-  <label for="modelo" class="form-label">Modelo:</label>
-  <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Modelo">
-  <label for="número_de_asientos" class="form-label">Número_de_asientos:</label>
-  <input type="number" class="form-control" id="número_de_asientos" name="número_de_asientos" placeholder="Número_de_asientos">
-  <label for="numero_de_baños" class="form-label">Numero_de_baños:</label>
-  <input type="number" class="form-control" id="numero_de_baños" name="numero_de_baños" placeholder="Numero_de_baños">
-  <label for="capacidad_máxima_peso" class="form-label">Capacidad_máxima_peso:</label>
-  <input type="number" class="form-control" id="capacidad_máxima_peso" name="capacidad_máxima_peso" placeholder="Capacidad_máxima_peso">
-  <hr>
-  <button type="submit" class="btn btn-success">Enviar</button>
-</form>
+  <form method="POST">
+    
+    <label for="marca" class="form-label">Marca:</label>
+<input type="text" class="form-control" id="marca"  placeholder="Marca" asp-for="@avion.marca" required>
+    <label for="modelo" class="form-label">Modelo:</label>
+    <input type="number" class="form-control" id="modelo" placeholder="Modelo" asp-for="@avion.modelo" required>
+    <label for="num_asientos" class="form-label">Num_asientos: </label>
+ <input type="number" class="form-control" id="num_asientos"  placeholder="Num_asientos" asp-for="@avion.num_asientos" required >
+    <label for="num_baños" class="form-label">Num_baños:</label>
+    <input type="number" class="form-control" id="num_baños"  placeholder="Num_baños" asp-for="@avion.num_baños" required>
+    <label for="cap_max_peso" class="form-label">Cap_max_peso:</label>
+ <input type="number" class="form-control" id="cap_max_peso"  placeholder="Cap_max_peso " asp-for="@avion.cap_max_peso" required>
+    <hr>
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
 </div>

@@ -13,7 +13,7 @@ aeropuertos= new List<Aeropuertos>()
             {
                 new Aeropuertos{id=1,nombre="El dorado",ciudad= "Bogota",pais= "Colombia", coord_x= 40, coord_y=40},
                 new Aeropuertos{id=2,nombre="Palonegro",ciudad= "Bucaramanga",pais= "Colombia", coord_x= 50, coord_y=50},
-                new Aeropuertos{id=4,nombre="El Eden",ciudad= "Armenia",pais= "Colombia", coord_x= 60, coord_y=60}
+                new Aeropuertos{id=3,nombre="El Eden",ciudad= "Armenia",pais= "Colombia", coord_x= 60, coord_y=60}
             };
 }
 public IEnumerable<Aeropuertos> GetAll()
@@ -23,6 +23,25 @@ return aeropuertos;
 public Aeropuertos GetAeropuertoWithId(int id){
 return aeropuertos.SingleOrDefault(b => b.id == id);
 }
+
+public Aeropuertos Create(Aeropuertos newAeropuerto)
+{
+if(aeropuertos.Count > 0){
+newAeropuerto.id=aeropuertos.Max(r => r.id) +1;
+}else{
+newAeropuerto.id = 1;
+}
+aeropuertos.Add(newAeropuerto);
+return newAeropuerto;
+}
+
+public Aeropuertos Delete(int id)
+{
+var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == id);
+aeropuertos.Remove(aeropuerto);
+return aeropuerto;
+}
+
 public Aeropuertos Update(Aeropuertos newAeropuerto){
             var aeropuerto= aeropuertos.SingleOrDefault(b => b.id == newAeropuerto.id);
             if(aeropuerto != null){

@@ -178,3 +178,5 @@ C:\Users\10\Documents\ProyectoCiclo3.App\ProyectoCiclo3.App.Frontend\obj\Debug\n
 C:\Users\10\Documents\ProyectoCiclo3.App\ProyectoCiclo3.App.Frontend\obj\Debug\netcoreapp3.1\ProyectoCiclo3.App.Frontend.genruntimeconfig.cache
 C:\Users\10\Desktop\ProyectoCiclo3.App\ProyectoCiclo3.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Aeropuerto\Details.cshtml.g.cs
 C:\Users\10\Desktop\ProyectoCiclo3.App\ProyectoCiclo3.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Aeropuerto\Edit.cshtml.g.cs
+C:\Users\10\Desktop\ProyectoCiclo3.App\ProyectoCiclo3.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Ruta\Details.cshtml.g.cs
+C:\Users\10\Desktop\ProyectoCiclo3.App\ProyectoCiclo3.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Ruta\Edit.cshtml.g.cs

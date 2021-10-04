@@ -11,9 +11,9 @@ public RepositorioAviones()
 {
 aviones= new List<Aviones>()
             {
-                new Aviones{id=4,marca="Audi",modelo= 2020,num_asientos= 4, num_baños= 4, cap_max_peso=150},
-                new Aviones{id=5,marca="Toyota",modelo= 2021,num_asientos= 16, num_baños= 4, cap_max_peso=200},
-                new Aviones{id=6,marca="Mazda",modelo= 2000,num_asientos= 24, num_baños= 4, cap_max_peso=80}
+                new Aviones{id=1,marca="boeing",modelo= 2022,num_asientos= 200, num_baños= 10, cap_max_peso=10000},
+                new Aviones{id=2,marca="pilatus",modelo= 2021,num_asientos= 400, num_baños= 11, cap_max_peso=20000},
+                new Aviones{id=3,marca="airbus",modelo= 2020,num_asientos= 500, num_baños= 12, cap_max_peso=40000}
             };
 }
 public IEnumerable<Aviones> GetAll()
@@ -23,6 +23,24 @@ return aviones;
 public Aviones GetAvionWithId(int id){
 return aviones.SingleOrDefault(b => b.id == id);
 }
+public Aviones Create(Aviones newAvion)
+{
+if(aviones.Count > 0){
+newAvion.id=aviones.Max(r => r.id) +1;
+}else{
+newAvion.id = 1;
+}
+aviones.Add(newAvion);
+return newAvion;
+}
+
+public Aviones Delete(int id)
+{
+var avion= aviones.SingleOrDefault(b => b.id == id);
+aviones.Remove(avion);
+return avion;
+}
+
 public Aviones Update(Aviones newAvion){
             var avion= aviones.SingleOrDefault(b => b.id == newAvion.id);
             if(avion != null){
