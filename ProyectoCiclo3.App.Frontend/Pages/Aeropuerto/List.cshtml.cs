@@ -27,7 +27,7 @@ public Aeropuertos Aeropuerto {get;set;}
 {
 if(Aeropuerto.id>0)
 {
-Aeropuerto = repositorioAeropuertos.Delete(Aeropuerto.id);
+repositorioAeropuertos.Delete(Aeropuerto.id);
 }
 return RedirectToPage("./List");
 }
